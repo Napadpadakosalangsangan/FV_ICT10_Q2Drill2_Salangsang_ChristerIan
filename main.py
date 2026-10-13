@@ -1,1 +1,1 @@
-from pyscript, import document, display
+from pyscript import document, display

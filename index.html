@@ -5,26 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drill 2</title>
 
-  <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css" />
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
 
   <style>
-    h1{color: rgb(4, 50, 136);}
-    #output1{border: 5px solid rgb(27, 102, 215);box-shadow: 0px 5px 5px rgb(58, 113, 240); height: 500px;border-radius: 10px;font-size: 20px;}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: black;
+        margin: 20px;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid black;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        border: 1px solid gray;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #eeeeee;
+    }
+
+    #result {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid gray;
+    }
+
+    #result h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    #member-list {
+        text-align: left;
+        white-space: pre-line;
+        overflow-wrap: anywhere;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    #member-count {
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    footer {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 12px;
+    }
   </style>
 </head>
+
 <body>
-  <div>
-    <h1>ADD NEW CLUB MEMBER: </h1>
-    <input type="text" id="Fname" placeholder="First Name ">
-    <br>
-    <input type="text" id="Lname" placeholder="Last Name ">
-    <br><br>
 
-    <button py-click="add">Submit</button>
-    <br><br>
+  <div class="container">
+    <h1>Marching Band Club</h1>
+    <p class="subtitle">Add New Club Member</p>
+
+    <label for="Fname">First Name</label>
+    <input type="text" id="Fname" placeholder="Enter your first name">
+
+    <label for="Lname">Last Name</label>
+    <input type="text" id="Lname" placeholder="Enter your last name">
+
+    <button id="recruit" py-click="recruit">RECRUIT</button>
+
+    <div id="result">
+        <h3>All Members:</h3>
+        <p id="list">No members added yet.</p>
+
+        <h3>TOTAL MEMBERS:</h3>
+        <p id="count">0</p>
+    </div>
+
+    <footer>
+      Marching Band | Recruiting New Members
+    </footer>
+
   </div>
+  <script type="py" src="main.py"></script>
 
-<script type="py" src="main.py"></script>
 </body>
 </html>
